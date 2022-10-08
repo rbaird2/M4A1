@@ -1,0 +1,61 @@
+[
+    {
+        "id": 0,
+        "customerName":"Lucas Baird",
+        "phoneNumber":"555-7777",
+        "address":"4015 Latchstring Ct",
+        "loanAmount":250,
+        "interest":0.04,
+        "loanTermYears":4,
+        "loanType":"Auto",
+        "description":"Secured Loan"
+    },
+    {
+        "id": 1,
+        "customerName":"Sally West",
+        "phoneNumber":"555-0000",
+        "address":"123 Main Street",
+        "loanAmount":650,
+        "interest":0.05,
+        "loanTermYears":15,
+        "loanType":"HELOC",
+        "description":"Remodel"
+
+    },
+    {
+        "id": 2,
+        "customerName":"Sponge Bob",
+        "phoneNumber":"555-1111",
+        "address":"1 Pineapple Way",
+        "loanAmount":50,
+        "interest":0.24,
+        "loanTermYears":1,
+        "loanType":"Unsecured",
+        "description":"Crabby Patties"
+
+    },
+    {
+        "id": 3,
+        "customerName":"Michelle Obama",
+        "phoneNumber":"555-6666",
+        "address":"147 Coral Lane",
+        "loanAmount":800,
+        "interest":0.035,
+        "loanTermYears":6,
+        "loanType":"Auto",
+        "description":"Mercedes"
+
+    },
+    {
+        "id": 4,
+        "customerName":"Luke S. Walker",
+        "phoneNumber":"555-2222",
+        "address":"Tattooine",
+        "loanAmount":6,
+        "interest":0.06,
+        "loanTermYears":5,
+        "loanType":"Personal",
+        "description":"Speeder"
+
+    }
+]
