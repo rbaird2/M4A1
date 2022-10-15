@@ -1,6 +1,6 @@
 // name: Raymond Baird
 // id: 1215758778
-// date created: 10/5/2022
+// date created: 10/12/2022
 // description: project to utilize api and access 
 
 const express = require('express');
@@ -8,7 +8,7 @@ const morgan = require('morgan');
 
 const courseRouter = require('./routes/courseRoutes');
 const userRouter = require('./routes/userRoutes');
-const customerRouter = require('./routes/customerRoutes');
+const loanRouter = require('./routes/loanRoutes');
 
 const app = express();
 
@@ -33,6 +33,6 @@ app.use((req, res, next) => {
 // 3) ROUTES
 app.use('/api/v1/courses', courseRouter);
 app.use('/api/v1/users', userRouter);
-app.use('/api/v1/customers', customerRouter);
+app.use('/api/v1/loans', loanRouter);
 
 module.exports = app;
