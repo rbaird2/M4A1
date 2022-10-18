@@ -30,13 +30,13 @@ exports.getAllLoans =   async (req, res) => {
 
 exports.getLoan = async (req, res) => {
   try {
-    const tour = await Tour.findById(req.params.id);
-    Loan.findOne({ _id: req.params.id })
+    const loan = await Loan.findById(req.params.id);
+    // Loan.findOne({ _id: req.params.id })
 
     res.status(200).json({
       status: 'success',
       data: {
-        tour
+        loan
       }
     });
   } catch (err) {
@@ -49,15 +49,15 @@ exports.getLoan = async (req, res) => {
 
 exports.createLoan = async  (req, res) => {
   try {
-    const newLoan = new Loan({})
-    newLoan.save()
+    // const newLoan = new Loan({})
+    // newLoan.save()
 
-    // const newLoan = await Loan.create(req.body);
+    const newLoan = await Loan.create(req.body);
 
     res.status(201).json({
       status: 'success',
       data: {
-        course: newLoan
+        loan: newLoan
       }
     });
   } catch (err) {
@@ -70,15 +70,15 @@ exports.createLoan = async  (req, res) => {
 
 exports.updateLoan = async (req, res) => {
   try {
-    const loan = await Loan.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true
+    const loan = await Loan.findByIdAndUpdate(req.params.id, req.body, {  //not Tour
+      // new: true,
+      // runValidators: true
     });
 
     res.status(200).json({
       status: 'success',
       data: {
-        course
+        loan// not course
       }
     });
   } catch (err) {

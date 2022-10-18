@@ -4,6 +4,11 @@ const mongoose = require('mongoose');
 
 const loanSchema = new mongoose.Schema(
   {
+    id: {
+        type: Number,
+        required: [true, 'A loan must have an id'],
+        unique: true,
+    },
     customerName: {
         type: String,
         required: [true, 'A customer must have a name'],
@@ -20,15 +25,14 @@ const loanSchema = new mongoose.Schema(
     },
     address: {
         type: String,
-        required: [true, 'An address must have a department name'],
+        required: [true, 'A customer must have an address'],
         trim: true,
-        maxlength: [40, 'An address  must have less or equal to 40 characters'],
-        minlength: [10, 'An address  must have more or equal to 10 characters']
+        maxlength: [40, 'An address must have less or equal to 40 characters'],
+        minlength: [10, 'An address must have more or equal to 10 characters']
     },
     loanAmount: {
         type: Number,
-        required: [true, 'A loan must have a loan name'],
-        unique: true,
+        required: [true, 'A loan must have a loan amount'],
         max: [600000, 'A loan must be less than or equal to $600,000'],
         min: [100, 'A loan must be greater than or equal to $100']
     },
@@ -53,10 +57,8 @@ const loanSchema = new mongoose.Schema(
     },
     description: {
         type: String,
-        required: [true, 'A loan must have a loan description'],
         trim: true,
-        maxlength: [40, 'A description must have less than or equal to 40 characters'],
-        minlength: [10, 'A description must have greater than or equal to 10 characters']
+        maxlength: [40, 'A description must have less than or equal to 40 characters']
     }
 });
 const Loan = mongoose.model('Loan', loanSchema);

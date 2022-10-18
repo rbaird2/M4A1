@@ -1,7 +1,7 @@
 // name: Raymond Baird
 // id: 1215758778
-// date created: 10/12/2022
-// description: project to utilize api and access 
+// date created: 10/16/2022
+// description: project to utilize api and access MongoDB
 
 const express = require('express');
 const morgan = require('morgan');

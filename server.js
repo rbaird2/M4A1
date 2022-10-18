@@ -10,12 +10,12 @@ const mongoose = require('mongoose');
 const MONGO_DATA_BASE = process.env.DATABASE.replace('<password>', process.env.DB_PASSWORD);
 
 //Connect to database
-mongoose.connect(MONGO_DATA_BASE,
+mongoose.connect(MONGO_DATA_BASE) //,
   //connection recipe
-  {
-    useNewUrlParser: true,
-    useCreateIndex: true
-  })
+  // {
+  //   useNewUrlParser: true,
+  //   useCreateIndex: true
+  // })
 .then(con=>{
     console.log(con.connection);// log connection properties
     console.log(`The Database connection was successful with ${process.env.DATABASE}`);// log connection properties
