@@ -9,6 +9,10 @@ const morgan = require('morgan');
 const courseRouter = require('./routes/courseRoutes');
 const userRouter = require('./routes/userRoutes');
 const loanRouter = require('./routes/loanRoutes');
+const customerRouter = require('./routes/customerRoutes');
+const ledgerRouter = require('./routes/ledgerRoutes');
+
+
 
 const app = express();
 
@@ -34,5 +38,8 @@ app.use((req, res, next) => {
 app.use('/api/v1/courses', courseRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/loans', loanRouter);
+app.use('/api/v1/customers', customerRouter);
+app.use('/api/v1/ledgers', ledgerRouter);
+
 
 module.exports = app;
