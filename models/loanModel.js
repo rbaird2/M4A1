@@ -2,11 +2,13 @@
 
 const mongoose = require('mongoose');
 
-const loanSchema = new mongoose.Schema(
+const loanSchema = new mongoose.Schema( //for MongoDB schema
   {
-    id: {
+    loan_number: {
         type: Number,
         required: [true, 'A loan must have an id'],
+        maxlength: [5, 'A loan number must have 5 digits'],
+        minlength: [5, 'A loan number must have 5 digits'],
         unique: true,
     },
     loan_type: {
@@ -15,13 +17,6 @@ const loanSchema = new mongoose.Schema(
         trim: true,
         maxlength: [40, 'A loan type must have less than or equal to 40 characters'],
         minlength: [4, 'A loan type must have greater than or equal to 4 characters']
-    },
-    loan_number:{
-        type: Number,
-        required: [true, 'A loan must have a loan number'],
-        trim: true,
-        maxlength: [5, 'A loan number must have 5 digits'],
-        minlength: [5, 'A loan number must have 5 digits']
     },
     loan_amount: {
         type: Number,
@@ -46,9 +41,14 @@ const loanSchema = new mongoose.Schema(
         required: [true, 'A loan must have a start date'],
         trim: true,
         maxlength: [20, 'A start date must have less than or equal to 20 characters'],
-        minlength: [10, 'A start date must have greater than or equal to 10 characters']
+        minlength: [7, 'A start date must have greater than or equal to 10 characters']
     },
-    created_date: { type: Date },
+    customer_id: {
+        type: Number,
+        required: [true, 'A loan must have a customer id'],
+        unique: true,
+    },
+    created_date: { type: Date }, //set up for autopopulation
     modified_date: { type: Date }
 });
 loanSchema.pre('save', function(next){  // from Stack Overflow "add created_at and updated_at fields to mongoose schemas"

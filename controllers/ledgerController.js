@@ -2,7 +2,7 @@
 const Ledger = require('./../models/ledgerModel');
 const APIFeatures = require('./../dataBaseManager/loanDbContext');
 
-exports.getAllLedgers =   async (req, res) => {
+exports.getAllLedgers =   async (req, res) => {  //SELECT all data
   try {
     // EXECUTE QUERY
     const features = new APIFeatures(Ledger.find(), req.query)
@@ -28,7 +28,7 @@ exports.getAllLedgers =   async (req, res) => {
   }
 };
 
-exports.getLedger = async (req, res) => {
+exports.getLedger = async (req, res) => {  //SELECT specific data
   try {
     const ledger = await Ledger.findById(req.params.id);
     // Ledger.findOne({ _id: req.params.id })
@@ -47,7 +47,7 @@ exports.getLedger = async (req, res) => {
   }
 };
 
-exports.createLedger = async  (req, res) => {
+exports.createLedger = async  (req, res) => {  //INSERT new data
   try {
     // const newLedger = new Ledger({})
     // newLedger.save()
@@ -68,9 +68,9 @@ exports.createLedger = async  (req, res) => {
   }
 };
 
-exports.updateLedger = async (req, res) => {
+exports.updateLedger = async (req, res) => {  //UPDATE existing data
   try {
-    const ledger = await Ledger.findByIdAndUpdate(req.params.id, req.body, {  //not Tour
+    const ledger = await Ledger.findByIdAndUpdate(req.params.id, req.body, {  //not tour variable
       // new: true,
       // runValidators: true
     });
@@ -78,7 +78,7 @@ exports.updateLedger = async (req, res) => {
     res.status(200).json({
       status: 'success',
       data: {
-        ledger// not course
+        ledger // not tour
       }
     });
   } catch (err) {
@@ -89,7 +89,7 @@ exports.updateLedger = async (req, res) => {
   }
 };
 
-exports.deleteLedger = async (req, res) => {
+exports.deleteLedger = async (req, res) => {  //DELETE existing data
   try {
     await Ledger.findByIdAndDelete(req.params.id);
 

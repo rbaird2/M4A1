@@ -1,61 +1,48 @@
 [
     {
-        "id": 0,
-        "customerName":"Lucas Baird",
-        "phoneNumber":"555-7777",
-        "address":"4015 Latchstring Ct",
-        "loanAmount":250,
-        "interest":0.04,
-        "loanTermYears":4,
-        "loanType":"Auto",
-        "description":"Secured Loan"
+        "loan_number": 10000,
+        "loan_type":"Auto",
+        "loan_amount":"20000",
+        "interest_rate":".045",
+        "loan_term":5,
+        "start_date":"01/01/2023",
+        "customer_id":20000
     },
     {
-        "id": 1,
-        "customerName":"Sally West",
-        "phoneNumber":"555-0000",
-        "address":"123 Main Street",
-        "loanAmount":650,
-        "interest":0.05,
-        "loanTermYears":15,
-        "loanType":"HELOC",
-        "description":"Remodel"
-
+        "loan_number": 10001,
+        "loan_type":"Home",
+        "loan_amount":"250000",
+        "interest_rate":".04",
+        "loan_term":20,
+        "start_date":"01/02/2023",
+        "customer_id":20001
     },
     {
-        "id": 2,
-        "customerName":"Sponge Bob",
-        "phoneNumber":"555-1111",
-        "address":"1 Pineapple Way",
-        "loanAmount":100,
-        "interest":0.24,
-        "loanTermYears":1,
-        "loanType":"Unsecured",
-        "description":"Crabby Patties"
-
+        "loan_number": 10002,
+        "loan_type":"Boat",
+        "loan_amount":"30000",
+        "interest_rate":".075",
+        "loan_term":8,
+        "start_date":"01/0/32023",
+        "customer_id":20002
     },
     {
-        "id": 3,
-        "customerName":"Michelle Obama",
-        "phoneNumber":"555-6666",
-        "address":"147 Coral Lane",
-        "loanAmount":800,
-        "interest":0.035,
-        "loanTermYears":6,
-        "loanType":"Auto",
-        "description":"Mercedes"
-
+        "loan_number": 10003,
+        "loan_type":"Life",
+        "loan_amount":"500000",
+        "interest_rate":".04",
+        "loan_term":30,
+        "start_date":"01/02/2023",
+        "customer_id":20003
     },
     {
-        "id": 4,
-        "customerName":"Luke S. Walker",
-        "phoneNumber":"555-2222",
-        "address":"1977 Tattooine",
-        "loanAmount":111,
-        "interest":0.06,
-        "loanTermYears":5,
-        "loanType":"Personal",
-        "description":"Speeder"
-
+        "loan_number": 10004,
+        "loan_type":"Auto",
+        "loan_amount":"218000",
+        "interest_rate":".08",
+        "loan_term":6,
+        "start_date":"01/02/2023",
+        "customer_id":20004
     }
+    
 ]

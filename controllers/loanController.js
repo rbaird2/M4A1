@@ -2,7 +2,7 @@
 const Loan = require('./../models/loanModel');
 const APIFeatures = require('./../dataBaseManager/loanDbContext');
 
-exports.getAllLoans =   async (req, res) => {
+exports.getAllLoans =   async (req, res) => {  //SELECT all data
   try {
     // EXECUTE QUERY
     const features = new APIFeatures(Loan.find(), req.query)
@@ -28,7 +28,7 @@ exports.getAllLoans =   async (req, res) => {
   }
 };
 
-exports.getLoan = async (req, res) => {
+exports.getLoan = async (req, res) => {  //SELECT specific data
   try {
     const loan = await Loan.findById(req.params.id);
     // Loan.findOne({ _id: req.params.id })
@@ -47,7 +47,7 @@ exports.getLoan = async (req, res) => {
   }
 };
 
-exports.createLoan = async  (req, res) => {
+exports.createLoan = async  (req, res) => {  //INSERT new data
   try {
     // const newLoan = new Loan({})
     // newLoan.save()
@@ -70,7 +70,7 @@ exports.createLoan = async  (req, res) => {
 
 exports.updateLoan = async (req, res) => {
   try {
-    const loan = await Loan.findByIdAndUpdate(req.params.id, req.body, {  //not Tour
+    const loan = await Loan.findByIdAndUpdate(req.params.id, req.body, {  //not tour variable
       // new: true,
       // runValidators: true
     });
@@ -78,7 +78,7 @@ exports.updateLoan = async (req, res) => {
     res.status(200).json({
       status: 'success',
       data: {
-        loan// not course
+        loan // not tour
       }
     });
   } catch (err) {
@@ -89,7 +89,7 @@ exports.updateLoan = async (req, res) => {
   }
 };
 
-exports.deleteLoan = async (req, res) => {
+exports.deleteLoan = async (req, res) => {  //DELETE existing data
   try {
     await Loan.findByIdAndDelete(req.params.id);
 

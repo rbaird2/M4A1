@@ -2,11 +2,13 @@
 
 const mongoose = require('mongoose');
 
-const customerSchema = new mongoose.Schema(
+const customerSchema = new mongoose.Schema( //for MongoDB schema
   {
-    id: {
+    customer_id: {
         type: Number,
         required: [true, 'A customer must have an id'],
+        maxlength: [5, 'A customer id must have 5 digits'],
+        minlength: [5, 'A customer id must have 5 digits'],
         unique: true,
     },
     first_name: {
@@ -40,15 +42,15 @@ const customerSchema = new mongoose.Schema(
         trim: true,
         maxlength: [20, 'A customer gender must have less or equal to 20 characters'],  
     },
-    created_at    : { type: Date },
-    updated_at    : { type: Date }
+    created_date    : { type: Date },    //set up for autopopulation
+    modified_date    : { type: Date }
 });
 
 customerSchema.pre('save', function(next){  // from Stack Overflow "add created_at and updated_at fields to mongoose schemas"
     now = new Date();
-    this.updated_at = now;
-    if ( !this.created_at ) {
-      this.created_at = now;
+    this.modified_date = now;
+    if ( !this.created_date ) {
+      this.created_date = now;
     }
     next();
   });

@@ -2,7 +2,7 @@
 const Customer = require('./../models/customerModel');
 const APIFeatures = require('./../dataBaseManager/loanDbContext');
 
-exports.getAllCustomers =   async (req, res) => {
+exports.getAllCustomers =   async (req, res) => {  //SELECT all data
   try {
     // EXECUTE QUERY
     const features = new APIFeatures(Customer.find(), req.query)
@@ -28,7 +28,7 @@ exports.getAllCustomers =   async (req, res) => {
   }
 };
 
-exports.getCustomer = async (req, res) => {
+exports.getCustomer = async (req, res) => {  //SELECT specific data
   try {
     const customer = await Customer.findById(req.params.id);
     // Customer.findOne({ _id: req.params.id })
@@ -47,7 +47,7 @@ exports.getCustomer = async (req, res) => {
   }
 };
 
-exports.createCustomer = async  (req, res) => {
+exports.createCustomer = async  (req, res) => {  //INSERT new data
   try {
     // const newCustomer = new Customer({})
     // newCustomer.save()
@@ -68,9 +68,9 @@ exports.createCustomer = async  (req, res) => {
   }
 };
 
-exports.updateCustomer = async (req, res) => {
+exports.updateCustomer = async (req, res) => {  //UPDATE existing data
   try {
-    const customer = await Customer.findByIdAndUpdate(req.params.id, req.body, {  //not Tour
+    const customer = await Customer.findByIdAndUpdate(req.params.id, req.body, {  //not tour variable
       // new: true,
       // runValidators: true
     });
@@ -78,7 +78,7 @@ exports.updateCustomer = async (req, res) => {
     res.status(200).json({
       status: 'success',
       data: {
-        customer// not course
+        customer // not tour
       }
     });
   } catch (err) {
@@ -89,7 +89,7 @@ exports.updateCustomer = async (req, res) => {
   }
 };
 
-exports.deleteCustomer = async (req, res) => {
+exports.deleteCustomer = async (req, res) => {  //DELETE existing data
   try {
     await Customer.findByIdAndDelete(req.params.id);
 

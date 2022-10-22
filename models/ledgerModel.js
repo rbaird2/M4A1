@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-const ledgerSchema = new mongoose.Schema(
+const ledgerSchema = new mongoose.Schema( //for MongoDB schema
   {
     ledger_id: {
         type: Number,
@@ -27,7 +27,7 @@ const ledgerSchema = new mongoose.Schema(
         maxlength: [5, 'A loan number must have 5 digits'],
         minlength: [5, 'A loan number must have 5 digits']
     },
-    created_date: { type: Date },
+    created_date: { type: Date },    //set up for autopopulation
     modified_date: { type: Date }
 });
 ledgerSchema.pre('save', function(next){  // from Stack Overflow "add created_at and updated_at fields to mongoose schemas"

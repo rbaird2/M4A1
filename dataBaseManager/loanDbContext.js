@@ -1,4 +1,7 @@
 //* Code START
+
+// uses this code for all collections in the database
+
 class APIFeatures {
     constructor(query, queryString) {
       this.query = query;

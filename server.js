@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 const MONGO_DATA_BASE = process.env.DATABASE.replace('<password>', process.env.DB_PASSWORD);
 
 //Connect to database
-mongoose.connect(MONGO_DATA_BASE) //,
+mongoose.connect(MONGO_DATA_BASE) //, commented out to make code work
   //connection recipe
   // {
   //   useNewUrlParser: true,
