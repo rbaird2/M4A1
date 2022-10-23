@@ -59,6 +59,10 @@ loanSchema.pre('save', function(next){  // from Stack Overflow "add created_at a
     }
     next();
   });
+  loanSchema.pre('findOneAndUpdate', function(next){  // from Stack Overflow "add created_at and updated_at fields to mongoose schemas"
+    this.set({ modified_date: new Date() });
+    next();
+  });
 
 const Loan = mongoose.model('Loan', loanSchema);
 

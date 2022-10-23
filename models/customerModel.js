@@ -42,8 +42,8 @@ const customerSchema = new mongoose.Schema( //for MongoDB schema
         trim: true,
         maxlength: [20, 'A customer gender must have less or equal to 20 characters'],  
     },
-    created_date    : { type: Date },    //set up for autopopulation
-    modified_date    : { type: Date }
+    created_date: { type: Date },    //set up for autopopulation
+    modified_date: { type: Date }
 });
 
 customerSchema.pre('save', function(next){  // from Stack Overflow "add created_at and updated_at fields to mongoose schemas"
@@ -54,9 +54,11 @@ customerSchema.pre('save', function(next){  // from Stack Overflow "add created_
     }
     next();
   });
+customerSchema.pre('findOneAndUpdate', function(next){  // from Stack Overflow "add created_at and updated_at fields to mongoose schemas"
+    this.set({ modified_date: new Date() });
+    next();
+  });
 const Customer = mongoose.model('customer', customerSchema);
-
-
 
 module.exports = Customer;
 //** code  END
