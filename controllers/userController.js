@@ -9,7 +9,8 @@ const APIFeatures = require('./../dataBaseManager/loanDbContext');
 
 exports.register =   function(req, res)  {  
     var newUser = new User(req.body);
-    newUser.hash_password = bcrypt.hashSync(req.body.password, 10);
+    console.log(newUser);
+    newUser.hash_password = bcrypt.hashSync(req.body.hash_password, 10);
     newUser.save(function(err, user) {
       if (err) {
         return res.status(400).send({
