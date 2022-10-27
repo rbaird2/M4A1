@@ -5,12 +5,12 @@ bcrypt = require('bcrypt'),
 User = mongoose.model('User');
 
 //const User = require('./../models/userModel');
-const APIFeatures = require('./../dataBaseManager/loanDbContext');
+const APIFeatures = require('../dataBaseManager/loanDbContext');
 
 exports.register =   function(req, res)  {  
     var newUser = new User(req.body);
     console.log(newUser);
-    newUser.hash_password = bcrypt.hashSync(req.body.hash_password, 10);
+    newUser.hash_password = bcrypt.hashSync(req.body.password, 10);
     newUser.save(function(err, user) {
       if (err) {
         return res.status(400).send({
@@ -40,7 +40,7 @@ exports.sign_in = function(req, res) {
       });
     };
 
-exports.loginRequired = function(req, res, next) {  //INSERT new data
+exports.loginRequired = function(req, res, next) {  
     if (req.user) {
         next();
       } else {

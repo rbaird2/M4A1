@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "description": "Learning node, express and mongoDB",
   "main": "app.js",
-    "scripts": {
+  "scripts": {
     "start:dev": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js"
   },
   "author": "IFT-458 INstructor",
   "license": "EDU",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.6.5",
     "morgan": "^1.9.1"
   }
