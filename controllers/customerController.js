@@ -104,13 +104,13 @@ exports.deleteCustomer = async (req, res) => {  //DELETE existing data
     });
   }
 };
-// exports.loginRequired = function(req, res, next) {
-//   if (req.user) {
-//     next();
-//   } else {
+exports.loginRequired = function(req, res, next) {
+  if (req.user) {
+    next();
+  } else {
 
-//     return res.status(401).json({ message: 'Unauthorized user!!' });
-//   }
-// };
+    return res.status(401).json({ message: 'Unauthorized user!!' });
+  }
+};
 
 //**Code  END

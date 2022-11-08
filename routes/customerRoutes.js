@@ -15,7 +15,7 @@ router
   .patch(customerController.updateCustomer)
   .delete(customerController.deleteCustomer);
 
-  router
+router
     .route('/auth/register')
     .post(userHandler.register);
 
